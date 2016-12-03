@@ -2,10 +2,10 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>The Grocery Store Brazil.</title>
+		<title>Infobyte Informática</title>
 	</head>
 	<body>
-		<h2>The Grocery Store Brazil.</h2>
+		<h2>Infobyte Informática</h2>
         <h4>Seu pedido foi atualizado</h4>
         <!-- Inserir detalhes do pedido aqui -->
         <!-- Inserir detalhes da entrega aqui -->

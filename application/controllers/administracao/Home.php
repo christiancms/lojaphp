@@ -1,7 +1,5 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
-/*******************************************************************************
-* Classe que carrega a página inicial da área de administração e a tela de login
-*******************************************************************************/
+
 class Home extends CI_Controller {
     
 	
@@ -9,7 +7,7 @@ class Home extends CI_Controller {
         parent::__construct();
         //$this->load->model('categorias_model', 'modelcategorias');
         //$this->categorias = $this->modelcategorias->listar_categorias();        
-		$this->load->model('usuarios_model', 'modelusuarios');
+		$this->load->model('Usuarios_model', 'modelusuarios');
 		$this->modelusuarios->validar($this->router->class,$this->router->method);
     }    
     

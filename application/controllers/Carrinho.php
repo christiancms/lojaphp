@@ -311,9 +311,9 @@ class Carrinho extends CI_Controller{
 	//Função que envia o e-mail de confirmação de um novo pedido para o cliente.
 	function enviar_confirmacao($dados,$para){
 		$this->load->library('email');
-		$this->email->from("loja@TheGroceryStoreBrazil","The Grocery Store Brazil");
+		$this->email->from("infobyte@infobyteinformatica.com","Infobyte Informática");
 		$this->email->to($para);
-		$this->email->subject('The Grocery Store Brazil - Pedido:'.$dados['pedido']['numero']);
+		$this->email->subject('Infobyte Informática - Pedido:'.$dados['pedido']['numero']);
 		$this->email->message($this->load->view('emails/novo_pedido',$dados,TRUE));            
 		if($this->email->send()){
 			return "email enviado";

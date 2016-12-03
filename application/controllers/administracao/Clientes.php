@@ -1,13 +1,11 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
-/*******************************************************************************
-* Controller da área de administração dos clientes.
-*******************************************************************************/
+
 class Clientes extends CI_Controller {
 
     public function __construct(){
         parent::__construct();
-		$this->load->model('clientes_model', 'modelclientes');
-		$this->load->model('usuarios_model', 'modelusuarios');		
+		$this->load->model('Clientes_model', 'modelclientes');
+		$this->load->model('Usuarios_model', 'modelusuarios');
 		$this->modelusuarios->validar($this->router->class,$this->router->method);
     }    
     

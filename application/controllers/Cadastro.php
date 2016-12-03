@@ -8,7 +8,7 @@ class Cadastro extends CI_Controller {
     
 	public function __construct(){
         parent::__construct();
-        $this->load->model('categorias_model', 'modelcategorias');
+        $this->load->model('Categorias_model', 'modelcategorias');
         $this->categorias = $this->modelcategorias->listar_categorias();
     }
     
@@ -58,9 +58,9 @@ class Cadastro extends CI_Controller {
     public function enviar_email_confirmacao($dados){               
         $mensagem = $this->load->view('emails/confirmar_cadastro.php',$dados,TRUE);
         $this->load->library('email');
-        $this->email->from("loja@TheGroceryStoreBrazil","The Grocery Store Brazil");
+        $this->email->from("infobyte@infobyteinformatica.com","Infobyte Informática");
         $this->email->to($dados['email']);
-        $this->email->subject('The Grocery Store Brazil - Confirmação de cadastro');
+        $this->email->subject('Infobyte Informática - Confirmação de cadastro');
         $this->email->message($mensagem);            
         if($this->email->send()){
             $data_header['categorias'] = $this->categorias;        
@@ -162,9 +162,9 @@ class Cadastro extends CI_Controller {
                 $dados = $cliente[0];    
                 $mensagem = $this->load->view('emails/recuperar_senha.php',$dados,TRUE);
                 $this->load->library('email');
-                $this->email->from("loja@TheGroceryStoreBrazil","The Grocery Store Brazil");
+                $this->email->from("infobyte@infobyteinformatica.com","Infobyte Informática");
                 $this->email->to($dados->email);
-                $this->email->subject('The Grocery Store Brazil - Recuperação de cadastro');
+                $this->email->subject('Infobyte Informática - Recuperação de cadastro');
                 $this->email->message($mensagem);            
                 if($this->email->send()){
                     $data_header['categorias'] = $this->categorias;        

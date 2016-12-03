@@ -8,9 +8,9 @@ class Categorias extends CI_Controller {
 	
     public function __construct(){
         parent::__construct();
-        $this->load->model('categorias_model', 'modelcategorias');
+        $this->load->model('Categorias_model', 'modelcategorias');
         $this->categorias = $this->modelcategorias->listar_categorias();		
-		$this->load->model('usuarios_model', 'modelusuarios');		
+		$this->load->model('Usuarios_model', 'modelusuarios');
 		$this->modelusuarios->validar($this->router->class,$this->router->method);
     }    
     
