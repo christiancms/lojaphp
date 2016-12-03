@@ -6,7 +6,7 @@ class Usuarios extends CI_Controller {
     private $categorias;
     public function __construct(){
         parent::__construct();
-        $this->load->model('usuarios_model', 'modelusuarios');
+        $this->load->model('Usuarios_model', 'modelusuarios');
 		$this->modelusuarios->validar($this->router->class,$this->router->method);
     }    
 	
