@@ -1,17 +1,15 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
-/*******************************************************************************
-* Controller da área de administração dos produtos.
-*******************************************************************************/
+
 class Produtos extends CI_Controller {
     
 	private $categorias;
     
 	public function __construct(){
         parent::__construct();
-        $this->load->model('categorias_model', 'modelcategorias');
+        $this->load->model('Categorias_model', 'modelcategorias');
         $this->categorias = $this->modelcategorias->listar_categorias();
-		$this->load->model('produtos_model', 'modelprodutos');
-		$this->load->model('usuarios_model', 'modelusuarios');		
+		$this->load->model('Produtos_model', 'modelprodutos');
+		$this->load->model('Usuarios_model', 'modelusuarios');
 		$this->modelusuarios->validar($this->router->class,$this->router->method);
     }    
     
