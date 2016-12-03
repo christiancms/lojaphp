@@ -28,7 +28,7 @@
             <div class="col-lg-9">
                 <div class="panel panel-default">
                     <div class='panel-heading'>
-                    	Faixas de preço por Kg cadastradas.
+                        Faixas de preço por Kg cadastradas.
                     </div>
                     <div class='panel-body'>
 <?php

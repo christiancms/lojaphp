@@ -6,9 +6,9 @@ class Transportadoras extends CI_Controller {
 
     public function __construct(){
         parent::__construct();
-		$this->load->model('transportadoras_model', 'modeltransportadoras');
+		$this->load->model('Transportadoras_model', 'modeltransportadoras');
 		$this->load->library('table');
-		$this->load->model('usuarios_model', 'modelusuarios');		
+		$this->load->model('Usuarios_model', 'modelusuarios');
 		$this->modelusuarios->validar($this->router->class,$this->router->method);
     }    
     
@@ -37,6 +37,10 @@ class Transportadoras extends CI_Controller {
 	}
 	
 	public function excluir($excluir){
+        echo "<script>var r=confirm('Are you sure you want to delete this category?');         </script>";
+
+        if($r==true)
+
 		if($this->modeltransportadoras->excluir($excluir)){
 			redirect(base_url("administracao/transportadoras"));
 		}
