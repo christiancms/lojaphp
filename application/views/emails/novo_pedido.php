@@ -2,10 +2,10 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>The Grocery Store Brazil.</title>
+		<title>Infobyte Informática</title>
 	</head>
 	<body>
-		<h2>The Grocery Store Brazil.</h2>
+		<h2>Infobyte Informática</h2>
 		<h3>Pedido <?php echo $pedido['numero'] ?></h3>
         <h4>Dados do cliente</h4>
         <?php
