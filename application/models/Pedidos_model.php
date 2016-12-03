@@ -1,7 +1,5 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
-/*******************************************************************************
-* Model dos pedidos.
-*******************************************************************************/
+
 class Pedidos_model extends CI_Model{
     public function __construct(){
         parent::__construct();
@@ -50,13 +48,13 @@ class Pedidos_model extends CI_Model{
 		$this->db->from('itens_pedidos');
 		$this->db->join('produtos', 'produtos.codigo = itens_pedidos.item');
 		$this->db->where('itens_pedidos.pedido',$dados['detalhes'][0]->id);
-		$this->db->group_by('itens_pedidos.item');
+		//$this->db->group_by('itens_pedidos.item');
 		$this->db->order_by('produtos.titulo','ASC');
 		$dados['itens'] = $this->db->get()->result();
 		return $dados;
     }
 	
-	public function alterar_status($id,$status,$comentarios){
+	public function alterar($id,$status,$comentarios){
 		$dados['status'] = $status;
 		$dados['comentarios'] = $comentarios;
 		$this->db->where('id',$id);

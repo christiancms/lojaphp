@@ -1,14 +1,12 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
-/*******************************************************************************
-* Controller da área de administração dos pedidos de clientes.
-*******************************************************************************/
+
 class Pedidos extends CI_Controller {
 
     public function __construct(){
         parent::__construct();
-		$this->load->model('pedidos_model', 'modelpedidos');
+		$this->load->model('Pedidos_model', 'modelpedidos');
 		$this->load->library('table');
-		$this->load->model('usuarios_model', 'modelusuarios');		
+		$this->load->model('Usuarios_model', 'modelusuarios');
 		$this->modelusuarios->validar($this->router->class,$this->router->method);
     }    
     
@@ -39,9 +37,9 @@ class Pedidos extends CI_Controller {
 		if($this->modelpedidos->alterar_status($id,$status,$comentarios)){
 			$dados = $this->modelpedidos->detalhes(md5($id));
 			$this->load->library('email');
-			$this->email->from("loja@TheGroceryStoreBrazil","The Grocery Store Brazil");
+			$this->email->from("infobyte@infobyteinformatica.com","Infobyte Informática");
 			$this->email->to($dados['cliente'][0]->email);
-			$this->email->subject('The Grocery Store Brazil - Pedido:'.$id);
+			$this->email->subject('Infobyte Informática - Pedido:'.$id);
 			$this->email->message($this->load->view('emails/atualizacao_pedido',$dados,TRUE));            
 			if($this->email->send()){
 				redirect(base_url("administracao/pedidos/detalhes/".md5($id)));
