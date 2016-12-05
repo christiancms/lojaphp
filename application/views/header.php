@@ -15,7 +15,8 @@
         echo anchor(base_url("carrinho")," Carrinho [".$this->cart->total_items()."] ");
         ?>
     </div>
-    <?php echo heading('Infobyte Informática.', 3, 'class="muted"') ?>
+    
+  <img src="<?php echo base_url() . 'assets/img/logo.png'  ?>" style="margin-top: 20px"/>
     <!-- Restante da view -->
     <ul class="nav nav-tabs">
         <li class="active"><?php echo anchor(base_url(),"Home") ?></li>            
@@ -37,6 +38,7 @@
                 form_input(array('type'=>'submit','name'=>'btn_busca','id'=>'btn_busca','value'=>'Buscar')) .
             form_close();
         ?>
+         
         </li>
   </ul>
   </div>
