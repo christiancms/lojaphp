@@ -1,7 +1,5 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
-/*******************************************************************************
-* Model dos produtos.
-*******************************************************************************/
+
 class Produtos_model extends CI_Model {
 
     public function __construct(){
@@ -75,4 +73,26 @@ class Produtos_model extends CI_Model {
 		$this->db->where('md5(id)',$id);
 		return $this->db->delete('produtos');
 	}
+        
+        public function selectRelat()
+    {
+        $sql = "select p.id, p.descricao, preco ";
+        $sql .= " from produtos p ";
+        //$sql .= "inner join marca m ON p.idMarca = m.id";
+        $query = $this->db->query($sql);
+        //result retorna array de dados
+        return $query->result();
+    }
 }
+
+/**
+ * public function selectRelat()
+    {
+        $sql = "select p.id, p.descricao, m.descricao as marca, valorCompra, ";
+        $sql .= "valorVenda, quantidade, foto from produtos p ";
+        $sql .= "inner join marca m ON p.idMarca = m.id";
+        $query = $this->db->query($sql);
+        //result retorna array de dados
+        return $query->result();
+    }
+ */

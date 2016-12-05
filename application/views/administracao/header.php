@@ -28,6 +28,7 @@
                     <li><a href="<?php echo base_url("administracao/produtos") ?>"><i class="fa fa-wrench fa-fw"></i> Produtos</a></li>
                     <li><a href="<?php echo base_url("administracao/pedidos") ?>"><i class="fa fa-wrench fa-fw"></i> Pedidos</a></li>
                     <li><a href="<?php echo base_url("administracao/transportadoras") ?>"><i class="fa fa-wrench fa-fw"></i> Fretes</a></li>
+                    <li><a href="<?php echo base_url("administracao/relatorios") ?>"><i class="fa fa-wrench fa-fw"></i> Relatórios</a></li>
                     <li><a href="<?php echo base_url("administracao/usuarios") ?>"><i class="fa fa-wrench fa-fw"></i> Usuários</a></li>
                 </ul>
             </div>
