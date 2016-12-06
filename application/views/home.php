@@ -1,7 +1,7 @@
 <style>
     .carousel-inner > .item > img,
     .carousel-inner > .item > a > img {
-        width: 100%;
+        width: 90%;
         margin: auto;
     }
 </style>
