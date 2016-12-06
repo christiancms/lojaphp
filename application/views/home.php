@@ -47,7 +47,7 @@
                 echo img("assets/img/produtos/" . md5($destaque->id) . ".jpg");
             }
             echo "<p>" . word_limiter($destaque->descricao, 20) . "</p>" .
-            anchor(base_url("produto/" . $destaque->id . "/" . limpar($destaque->titulo)), "Ver produto", array('class' => 'btn')) .
+            anchor(base_url("produto/" . $destaque->id . "/" . limpar($destaque->titulo)), "Ver produto", array('class' => 'btn btn-primary')) .
             "</div>";
             if ($contador % 3 == 0) {
                 echo "</div><div class='row-fluid'>";
