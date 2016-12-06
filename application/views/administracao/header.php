@@ -9,12 +9,14 @@
             </button>
             <span class="navbar-brand">Administração da loja</span>
         </div>
-        <ul class="nav navbar-top-links navbar-right">                
+        <ul class="nav navbar-top-links navbar-right">
+            <?= $_SESSION['usuario']  ?>
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                     <i class="fa fa-user fa-fw"></i><i class="fa fa-caret-down"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-user">
+
                     <li><a href="<?php echo base_url("administracao/logout") ?>"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
                 </ul>
             </li>
