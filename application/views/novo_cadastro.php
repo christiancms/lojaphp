@@ -28,7 +28,7 @@
     	form_input(array('id'=>'celular','name'=>'celular','value'=>'','Placeholder'=>'Celular','value'=>set_value('celular'))) .
     	form_input(array('id'=>'email','name'=>'email','value'=>'','Placeholder'=>'E-mail','value'=>set_value('email'))) .
     	form_input(array('id'=>'senha','name'=>'senha', 'type'=>'password','value'=>'','Placeholder'=>'Senha','value'=>set_value('senha'))) .
-    	form_submit('btn_cadastrar','Cadastrar') .
+    	form_submit('btn_cadastrar','Cadastrar', 'class=btn-success') .
     "</div>" .
     form_close();
     ?>

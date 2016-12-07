@@ -39,7 +39,7 @@
             form_open(base_url("carrinho/adicionar")) .            
             form_hidden($campos_hidden) .
             form_input("quantidade",1) .
-            form_submit("adicionar","Adicionar ao carrinho") .
+            form_submit("adicionar","Adicionar ao carrinho", "class='btn-success'") .
             form_close();
         ?>
         </div>

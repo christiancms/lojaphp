@@ -7,6 +7,6 @@
     	<p>Seu cadastro foi efetuado com sucesso.<br/>
      	Você receberá um e-mail para ativação da sua conta.<br/>
      	Caso não receba a mensagem em alguns minutos cheque também a pasta SPAM da sua conta de email.<br/>
-     	Muito obrigado por cadastrar.</p>
+     	Muito obrigado por cadastrar na Infobyte Informática.</p>
   	</div>  
 </div>

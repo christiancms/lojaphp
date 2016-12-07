@@ -15,7 +15,7 @@ foreach ($this->cart->contents() as $item) {
 }
 
 echo "<div class='row-fluid'>" .
-    "<div class='span9'>" . form_submit("btnAtualizar", "Atualizar quantidades") . "</div>" .
+    "<div class='span9'>" . form_submit("btnAtualizar", "Atualizar quantidades", "class='btn-danger'") . "</div>" .
     "<div class='span1 texto-direita'>Total itens:</div>" .
     "<div class='span2 texto-direita'>" . reais($this->cart->total()) . "</div>" .
     "</div>" .
