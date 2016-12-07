@@ -27,7 +27,7 @@
     	form_input(array('id'=>'telefone','name'=>'telefone','value'=>'','Placeholder'=>'Telefone','value'=>set_value('telefone'))) .
     	form_input(array('id'=>'celular','name'=>'celular','value'=>'','Placeholder'=>'Celular','value'=>set_value('celular'))) .
     	form_input(array('id'=>'email','name'=>'email','value'=>'','Placeholder'=>'E-mail','value'=>set_value('email'))) .
-    	form_input(array('id'=>'senha','name'=>'senha','value'=>'','Placeholder'=>'Senha','value'=>set_value('senha'))) .
+    	form_input(array('id'=>'senha','name'=>'senha', 'type'=>'password','value'=>'','Placeholder'=>'Senha','value'=>set_value('senha'))) .
     	form_submit('btn_cadastrar','Cadastrar') .
     "</div>" .
     form_close();
@@ -39,7 +39,7 @@ $(document).ready(function(){
     $('#cpf').mask('000.000.000-00', {reverse: true});
     $('#cep').mask('00000-000', {reverse: true});
     $('#telefone').mask('(00)0000.00000', {reverse: true});
-    $('#celular').mask('(00)0000.00000', {reverse: true});
+    $('#celular').mask('(00)00000.00000', {reverse: true});
     $('#data_nascimento').mask('00/00/0000', {reverse: true});
     $('#sexo').mask('A', {reverse: true});
     $("#cep").blur(function(){
