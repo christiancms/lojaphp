@@ -1,3 +1,4 @@
+<script src='https://www.google.com/recaptcha/api.js'></script>
 <div id="page-wrapper">
     <div class="container-fluid">
         <div class="row">
@@ -13,13 +14,11 @@
                 <textarea autocomplete="off" type="text" id="descricao" name="descricao"
                           maxlength="200" placeholder="Descrição"></textarea>
                 <br/>
-                <img src="<?= base_url() . "gera2.php" ?>" alt="Caracteres"/>
-                <br/> <br/>
-                <input autocomplete="off" type="text" id="caracteres" name="caracteres" placeholder="Capctha"/>
-                <br/>
                 <input type="submit" class="btn btn-success" value="Enviar" name=""/>
                 </br>
+
                 <?php echo form_close(); ?>
+                <div class="g-recaptcha" data-sitekey="6LdpFw4UAAAAAFPftZ9RKkruY9KwzzxvGRt7zsLk"></div>
                 </br>
             </div>
         </div>
