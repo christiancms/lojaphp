@@ -37,7 +37,7 @@ class Pedidos extends CI_Controller {
 		if($this->modelpedidos->alterar_status($id,$status,$comentarios)){
 			$dados = $this->modelpedidos->detalhes(md5($id));
 			$this->load->library('email');
-			$this->email->from("infobyte@infobyteinformatica.com","Infobyte Informática");
+			$this->email->from("infobytemovel@gmail.com","Infobyte Informática");
 			$this->email->to($dados['cliente'][0]->email);
 			$this->email->subject('Infobyte Informática - Pedido:'.$id);
 			$this->email->message($this->load->view('emails/atualizacao_pedido',$dados,TRUE));            
