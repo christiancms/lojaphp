@@ -56,7 +56,8 @@ class Produtos extends CI_Controller
             $comprimento = $this->input->post('txt_comprimento_caixa_mm');
             $peso = $this->input->post('txt_peso_gramas');
             $descricao = $this->input->post('txt_descricao');
-            if ($this->modelprodutos->adicionar($codigo, $titulo, $preco, $largura, $altura, $comprimento, $peso, $descricao)) {
+            $categoriaid = $this->input->post('categorias');
+            if ($this->modelprodutos->adicionar($codigo, $titulo, $preco, $largura, $altura, $comprimento, $peso, $descricao, $categoriaid)) {
                 redirect(base_url('administracao/produtos'));
             } else {
                 echo "Houve um erro ao cadastrar a categoria.";

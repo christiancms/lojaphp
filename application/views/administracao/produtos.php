@@ -23,7 +23,7 @@
                     form_input(array('name' => 'txt_comprimento_caixa_mm', 'id' => 'txt_comprimento_caixa_mm', 'value' => set_value('txt_comprimento_caixa_mm'))) .
                     form_label("Peso da caixa (gramas)", "txt_peso_gramas") .
                     form_input(array('name' => 'txt_peso_gramas', 'id' => 'txt_peso_gramas', 'value' => set_value('txt_peso_gramas')));
-                echo "<label>Categorias</label><select class='form-control'>";
+                echo "<label>Categorias</label><select name='categorias' class='form-control'>";
                 foreach ($categorias as $categoria) {
                     echo "<option value=" . $categoria->id . "> " . $categoria->titulo . "</option>";
 

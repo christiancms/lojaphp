@@ -44,7 +44,7 @@ class Produtos_model extends CI_Model {
 		return $this->db->get()->result();
 	}
 	
-	public function adicionar($codigo,$titulo,$preco,$largura,$altura,$comprimento,$peso,$descricao){
+	public function adicionar($codigo,$titulo,$preco,$largura,$altura,$comprimento,$peso,$descricao, $categoriaid){
 		$dados['codigo'] = $codigo;
 		$dados['titulo'] = $titulo;
 		$dados['preco'] = $preco;
@@ -53,6 +53,8 @@ class Produtos_model extends CI_Model {
 		$dados['comprimento_caixa_mm'] = $comprimento;
 		$dados['peso_gramas'] = $peso;
 		$dados['descricao'] = $descricao;
+        $data = array('produto'=>$dados['id'],'categoria'=>$categoriaid);
+        $this->db->insert('produtos_categorias',$data);
 		return $this->db->insert('produtos',$dados);
 	}
 	
