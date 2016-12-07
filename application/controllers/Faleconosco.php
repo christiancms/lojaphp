@@ -22,20 +22,22 @@ class Faleconosco extends CI_Controller
 
     public function valida()
     {
-//        session_start();
+
         $nome = $_POST["nome"];
         $email = $_POST["email"];
         $descricao = $_POST["descricao"];
         $caracteres = $_POST["caracteres"];
 
         $codigo = $_SESSION["codigo"];
+        echo $_SESSION["codigo"];
 
-        if ($codigo == $caracteres) {
+        if ($_SESSION["codigo"] == $caracteres) {
             if($this->modelfaleconosco->adicionar($nome,$email,$descricao)){
                 redirect(base_url('home'));
             }
         } else {
-            echo "Erro...";
+            echo "Erro...<br/>";
+            print_r($_SESSION);
         }
     }
 }
