@@ -553,3 +553,12 @@ ALTER TABLE `permissoes`
 -- ---------------------------------------------------------
 
 
+-- CREATE TABLE "faleconosco" -------------------------------
+CREATE TABLE `faleconosco` (
+	`id` Int( 10 ) UNSIGNED AUTO_INCREMENT NOT NULL,
+	`nome` VarChar( 75 ) NOT NULL,
+	`email` VarChar( 75 ) NOT NULL,
+	`descricao` Text NOT NULL,
+	PRIMARY KEY ( `id` ) )
+ENGINE = InnoDB
+AUTO_INCREMENT = 1;

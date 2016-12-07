@@ -1,7 +1,5 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
-/*******************************************************************************
-* Controller da página de produtos.
-*******************************************************************************/
+
 class Produtos extends CI_Controller{
     
 	public $categorias;

@@ -29,7 +29,7 @@
                 }?>
             </ul>
         </li>
-        <li><?php echo anchor(base_url('fale-conosco'),"Fale conosco") ?></li>
+        <li><?php echo anchor(base_url("faleconosco"),"Fale conosco") ?></li>
         <li style="float: right">
         <?php
             $atributos = array("name"=>"form_busca","id"=>"form_busca","class"=>"navbar-search pull-right");

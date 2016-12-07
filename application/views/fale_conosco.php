@@ -1,4 +1,4 @@
-<div id="page-wrapper" xmlns="http://www.w3.org/1999/html">
+<div id="page-wrapper">
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
@@ -11,14 +11,16 @@
                 <input autocomplete="off" type="text" id="email" name="email" placeholder="E-mail"/>
                 <br/>
                 <textarea autocomplete="off" type="text" id="descricao" name="descricao"
-                         maxlength="200" placeholder="Descrição"></textarea>
+                          maxlength="200" placeholder="Descrição"></textarea>
                 <br/>
+                <img src="<?= base_url() . "gera2.php" ?>" alt="Caracteres"/>
+                <br/> <br/>
                 <input autocomplete="off" type="text" id="caracteres" name="caracteres" placeholder="Capctha"/>
                 <br/>
                 <input type="submit" class="btn btn-success" value="Enviar" name=""/>
-                <? echo form_close(); ?>
                 </br>
-                <img src="gera2.php" alt="Caracteres" />
+                <?php echo form_close(); ?>
+                </br>
             </div>
         </div>
     </div>

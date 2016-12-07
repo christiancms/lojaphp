@@ -1,7 +1,5 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
-/*******************************************************************************
-* Controller de cadastros de usuários.
-*******************************************************************************/
+
 class Cadastro extends CI_Controller {
     
 	private $categorias;
