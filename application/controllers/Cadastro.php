@@ -56,7 +56,7 @@ class Cadastro extends CI_Controller {
     public function enviar_email_confirmacao($dados){               
         $mensagem = $this->load->view('emails/confirmar_cadastro.php',$dados,TRUE);
         $this->load->library('email');
-        $this->email->from("infobyte@infobyteinformatica.com","Infobyte Informática");
+        $this->email->from("infobytemovel@gmail.com","Infobyte Informática");
         $this->email->to($dados['email']);
         $this->email->subject('Infobyte Informática - Confirmação de cadastro');
         $this->email->message($mensagem);            
@@ -160,7 +160,7 @@ class Cadastro extends CI_Controller {
                 $dados = $cliente[0];    
                 $mensagem = $this->load->view('emails/recuperar_senha.php',$dados,TRUE);
                 $this->load->library('email');
-                $this->email->from("infobyte@infobyteinformatica.com","Infobyte Informática");
+                $this->email->from("infobytemovel@gmail.com","Infobyte Informática");
                 $this->email->to($dados->email);
                 $this->email->subject('Infobyte Informática - Recuperação de cadastro');
                 $this->email->message($mensagem);            
