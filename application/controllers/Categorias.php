@@ -1,7 +1,5 @@
 <?php
-/*******************************************************************************
-* Controller de cadastros de categorias.
-*******************************************************************************/
+
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Categorias extends CI_Controller {
     
