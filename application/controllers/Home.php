@@ -42,7 +42,8 @@ class Home extends CI_Controller {
         
     	$this->load->view('html-header');
         $this->load->view('header',$data_header);
-    	echo "Fale Conosco";
+    	//echo "Fale Conosco";
+        $this->load->view('fale_conosco');
         $this->load->view('footer');
         $this->load->view('html-footer');
     }
