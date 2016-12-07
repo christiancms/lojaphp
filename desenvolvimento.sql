@@ -513,7 +513,7 @@ CREATE INDEX `FK_metodo` USING BTREE ON `permissoes`( `metodo` );
 ALTER TABLE `produtos_categorias`
 	ADD CONSTRAINT `FK_produtos_categorias_categoria` FOREIGN KEY ( `categoria` )
 	REFERENCES `categorias`( `id` )
-	ON DELETE Restrict
+	ON DELETE Cascade
 	ON UPDATE Cascade;
 -- ---------------------------------------------------------
 
@@ -522,7 +522,7 @@ ALTER TABLE `produtos_categorias`
 ALTER TABLE `produtos_categorias`
 	ADD CONSTRAINT `FK_produtos_categorias_produto` FOREIGN KEY ( `produto` )
 	REFERENCES `produtos`( `id` )
-	ON DELETE Restrict
+	ON DELETE Cascade
 	ON UPDATE Cascade;
 -- ---------------------------------------------------------
 
@@ -562,3 +562,27 @@ CREATE TABLE `faleconosco` (
 	PRIMARY KEY ( `id` ) )
 ENGINE = InnoDB
 AUTO_INCREMENT = 1;
+
+
+
+
+
+
+CREATE TABLE IF NOT EXISTS `loja`.`categorias_has_produtos` (
+	`categorias_id` INT(10) UNSIGNED NOT NULL,
+	`produtos_id` INT(10) UNSIGNED NOT NULL,
+	PRIMARY KEY (`categorias_id`, `produtos_id`),
+	INDEX `fk_categorias_has_produtos_produtos1_idx` (`produtos_id` ASC),
+	INDEX `fk_categorias_has_produtos_categorias1_idx` (`categorias_id` ASC),
+	CONSTRAINT `fk_categorias_has_produtos_categorias1`
+	FOREIGN KEY (`categorias_id`)
+	REFERENCES `loja`.`categorias` (`id`)
+		ON DELETE NO ACTION
+		ON UPDATE NO ACTION,
+	CONSTRAINT `fk_categorias_has_produtos_produtos1`
+	FOREIGN KEY (`produtos_id`)
+	REFERENCES `loja`.`produtos` (`id`)
+		ON DELETE NO ACTION
+		ON UPDATE NO ACTION)
+	ENGINE = InnoDB
+	DEFAULT CHARACTER SET = utf8;
