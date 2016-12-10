@@ -1,7 +1,5 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
-/*******************************************************************************
-* Controller do carrinho de compras.
-*******************************************************************************/
+
 class Carrinho extends CI_Controller{
     private $categorias;
     
@@ -272,32 +270,32 @@ class Carrinho extends CI_Controller{
 					$this->db->insert('itens_pedidos',$dados_item);
 				}
 				$total_a_cobrar = (double)($this->cart->total() + (double)str_replace(",",".",$frete));
-				require_once('./locaweb-gateway-php-master/LocawebGateway.php');		
+				require_once('/boletophp/boleto_bb.php');		
 				$array_pedido = array('numero'=>$pedido,'total'=>$total_a_cobrar,'moeda'=>'real','descricao'=>'Pedido: '.$pedido);	
 				$vencimento_boleto = date('dmY', strtotime('+1 week')); //Dando uma semana de prazo para vencer o boleto.			
 				$array_pagamento = array('meio_pagamento' => 'boleto_itau','data_vencimento' => $vencimento_boleto);							
 				$array_comprador = array('nome'=>$sessao['cliente']->nome,'documento'=>$sessao['cliente']->cpf,'endereco' =>$sessao['cliente']->rua,'numero'=>$sessao['cliente']->numero,'cep'=>$sessao['cliente']->cep,'bairro'=>$sessao['cliente']->bairro,'cidade' => $sessao['cliente']->cidade,'estado' => $sessao['cliente']->estado);
 				$array_transacao = array('url_retorno' => base_url('carrinho/finalizar_compra'),'capturar'=>'true','pedido'=>$array_pedido,'pagamento' => $array_pagamento,'comprador'=>$array_comprador);		
-				$transacao = LocawebGateway::criar($array_transacao)->sendRequest();			
-				if(!$transacao->transacao->erro){				
-					$this->db->trans_commit();
-					$this->cart->destroy();
-					$dados_email['pedido'] = $array_pedido;
-					$dados_email['comprador'] = $array_comprador;
-					$dados_email['transacao'] = $transacao;
-					$this->enviar_confirmacao($dados_email,$sessao['cliente']->email);
-				}
-				else{
-					$this->db->trans_rollback();
-				}
-				$dados_retorno['transacao'] = $transacao;
-				$dados_header['categorias'] = $this->categorias;	
-				$this->load->view('html-header');
-				$this->load->view('header',$dados_header);
-				$this->load->view('retorno_boleto',$dados_retorno);			
-				$this->load->view('footer');
-				$this->load->view('html-footer');
-				$this->db->trans_complete();
+//				$transacao = LocawebGateway::criar($array_transacao)->sendRequest();			
+//				if(!$transacao->transacao->erro){				
+//					$this->db->trans_commit();
+//					$this->cart->destroy();
+//					$dados_email['pedido'] = $array_pedido;
+//					$dados_email['comprador'] = $array_comprador;
+//					$dados_email['transacao'] = $transacao;
+//					$this->enviar_confirmacao($dados_email,$sessao['cliente']->email);
+//				}
+//				else{
+//					$this->db->trans_rollback();
+//				}
+//				$dados_retorno['transacao'] = $transacao;
+//				$dados_header['categorias'] = $this->categorias;	
+//				$this->load->view('html-header');
+//				$this->load->view('header',$dados_header);
+//				$this->load->view('retorno_boleto',$dados_retorno);			
+//				$this->load->view('footer');
+//				$this->load->view('html-footer');
+//				$this->db->trans_complete();
 			}
 			else{
 				redirect(base_url('pagar-e-finalizar-compra'));
