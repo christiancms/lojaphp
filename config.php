@@ -18,7 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 // http://localhost:8080/lojaphp/
-$config['base_url'] = 'http://localhost:8080/lojaphp';
+$config['base_url'] = 'http://localhost/lojaphp/';
 
 /*
 |--------------------------------------------------------------------------

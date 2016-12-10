@@ -23,7 +23,7 @@ class Relatorios extends CI_Controller {
         //define o título e largura das colunas
         $this->pdf->setColunas(array(utf8_decode('Código') => 15,
             utf8_decode('Descrição') => 50,
-            'Marca' => 20,
+            'Valor R$' => 20,
 //            'Valor Compra' => 30,
 //            'Valor Venda' => 30,
 //            'Quant.' => 15,
@@ -36,9 +36,10 @@ class Relatorios extends CI_Controller {
         $this->pdf->AddPage();
 
         foreach ($dados as $linha) {
-            $this->pdf->Cell(15, 8, $linha->id . "  ", 0, 0, "R");
+//            $this->pdf->Cell(15, 8, $linha->id . "  ", 0, 0, "R");
+            $this->pdf->Cell(50, 8, utf8_decode($linha->id));
             $this->pdf->Cell(50, 8, utf8_decode($linha->descricao));
-//            $this->pdf->Cell(20, 8, utf8_decode($linha->marca));
+            $this->pdf->Cell(20, 8, utf8_decode($linha->preco));
 //            $this->pdf->Cell(30, 8, utf8_decode(number_format($linha->valorCompra, 2, ',', ',')));
 //            $this->pdf->Cell(30, 8, utf8_decode(number_format($linha->valorVenda, 2, ',', ',')));
 //            $this->pdf->Cell(15, 8, utf8_decode($linha->quantidade));
@@ -47,7 +48,7 @@ class Relatorios extends CI_Controller {
 
         $this->pdf->Output();
     }
-    
+
 //
 //    public function produtos() {
 //        //carrega a model de produtos
@@ -129,5 +130,4 @@ class Relatorios extends CI_Controller {
 //
 //        $this->pdf->Output();
 //    }
-
 }

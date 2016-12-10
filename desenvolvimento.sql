@@ -566,6 +566,14 @@ AUTO_INCREMENT = 1;
 
 
 
+-- CREATE TABLE "produtos_categorias" ----------------------
+CREATE TABLE `produtos_categorias` (
+	`produto` Int( 10 ) UNSIGNED NOT NULL,
+	`categoria` Int( 10 ) UNSIGNED NOT NULL,
+	CONSTRAINT `unique_produto_categoria` UNIQUE( `produto`, `categoria` ) )
+	ENGINE = InnoDB;
+-- ---------------------------------------------------------
+
 
 
 CREATE TABLE IF NOT EXISTS `loja`.`categorias_has_produtos` (
